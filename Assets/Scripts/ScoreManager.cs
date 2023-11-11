@@ -69,9 +69,7 @@ public class ScoreManager : MonoBehaviour
                 newHighScore = true;
                 SoundManager.Instance.PlaySound("Highscore");
             }
-        }
-
-        
+        }        
     }
 
     public bool HasLost() => lost;

@@ -2329,11 +2329,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  leftLimit: -2.5
-  rightLimit: 2.5
+  staticLeftLimit: -2.86
+  staticRightLimit: 2.86
   fruitInstatiationSlot: {fileID: 557750862}
-  leftCollider: {fileID: 1382607551}
-  rightCollider: {fileID: 1356466535}
 --- !u!212 &936990585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2618,7 +2616,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0.06, y: 0.51, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
