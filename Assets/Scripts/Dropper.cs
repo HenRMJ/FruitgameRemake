@@ -10,11 +10,10 @@ public class Dropper : MonoBehaviour
 
     private PlayerControls playerControls;
 
-    [SerializeField] private float speed, leftLimit, rightLimit;
+    [SerializeField] private float speed, staticLeftLimit, staticRightLimit;
     [SerializeField] private Transform fruitInstatiationSlot;
-    [SerializeField] private BoxCollider2D leftCollider, rightCollider;
 
-    private Bounds leftBound, rightBound;
+    private float leftLimit, rightLimit;
     private Transform fruitHeld;
     private BaseFruit fruit;
 
@@ -27,9 +26,6 @@ public class Dropper : MonoBehaviour
 
     private void Start()
     {
-        leftBound = leftCollider.bounds;
-        rightBound = rightCollider.bounds;
-
         InstantiateNewFruit();
     }
 
@@ -91,22 +87,23 @@ public class Dropper : MonoBehaviour
 
     private void SetNewLimit()
     {
-        Bounds fruitBound = fruitHeld.GetComponent<CircleCollider2D>().bounds;
+        CircleCollider2D collider = fruitHeld.GetComponent<CircleCollider2D>();
 
-        float leftWall = leftBound.center.x + leftBound.extents.x;
-        float rightWall = rightBound.center.x - rightBound.extents.x;
+        collider.enabled = true;
+        Bounds fruitBound = collider.bounds;
+        collider.enabled = false;
 
-        leftLimit = leftWall + fruitBound.extents.x;
-        rightLimit = rightWall - fruitBound.extents.x;
-
-        if (transform.position.x < leftLimit)
-        {
-            transform.position = new Vector2(leftLimit, transform.position.y);
-        }
+        leftLimit = staticLeftLimit + fruitBound.extents.x;
+        rightLimit = staticRightLimit - fruitBound.extents.x;
 
         if (transform.position.x > rightLimit)
         {
             transform.position = new Vector2(rightLimit, transform.position.y);
+        }
+
+        if (transform.position.x < leftLimit)
+        {
+            transform.position = new Vector2(leftLimit, transform.position.y);
         }
     }
 }
