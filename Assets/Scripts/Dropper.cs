@@ -12,7 +12,9 @@ public class Dropper : MonoBehaviour
 
     [SerializeField] private float speed, leftLimit, rightLimit;
     [SerializeField] private Transform fruitInstatiationSlot;
+    [SerializeField] private BoxCollider2D leftCollider, rightCollider;
 
+    private Bounds leftBound, rightBound;
     private Transform fruitHeld;
     private BaseFruit fruit;
 
@@ -25,6 +27,9 @@ public class Dropper : MonoBehaviour
 
     private void Start()
     {
+        leftBound = leftCollider.bounds;
+        rightBound = rightCollider.bounds;
+
         InstantiateNewFruit();
     }
 
@@ -81,6 +86,27 @@ public class Dropper : MonoBehaviour
         fruit.IsHeld = true;
         fruit.ID = FruitProgression.Instance.ID;
 
-        Debug.Log($"Dropper Fruit Name: {fruit.name}, Dropper Fruit ID: {fruit.ID}");
+        SetNewLimit();
+    }
+
+    private void SetNewLimit()
+    {
+        Bounds fruitBound = fruitHeld.GetComponent<CircleCollider2D>().bounds;
+
+        float leftWall = leftBound.center.x + leftBound.extents.x;
+        float rightWall = rightBound.center.x - rightBound.extents.x;
+
+        leftLimit = leftWall + fruitBound.extents.x;
+        rightLimit = rightWall - fruitBound.extents.x;
+
+        if (transform.position.x < leftLimit)
+        {
+            transform.position = new Vector2(leftLimit, transform.position.y);
+        }
+
+        if (transform.position.x > rightLimit)
+        {
+            transform.position = new Vector2(rightLimit, transform.position.y);
+        }
     }
 }
