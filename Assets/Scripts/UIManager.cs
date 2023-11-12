@@ -1,10 +1,12 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private Slider musicSlider, sfxSlider;
+    [SerializeField] private GameObject detailsPanel, combinationUI, nextFruitUI;
 
     private Animator animator;
 
@@ -28,6 +30,20 @@ public class UIManager : MonoBehaviour
             sfxSlider.value = (float)ES3.Load("sfxSlider");
             SoundManager.Instance.SetSoundEffectVolume((float)ES3.Load("sfxSlider"));
         }
+
+        ScoreManager.Instance.OnLostGame += ScoreManager_OnLostGame;
+    }
+
+    private void OnDestroy()
+    {
+        ScoreManager.Instance.OnLostGame -= ScoreManager_OnLostGame;
+    }
+
+    private void ScoreManager_OnLostGame(object sender, EventArgs e)
+    {
+        detailsPanel.SetActive(true);
+        combinationUI.SetActive(false);
+        nextFruitUI.SetActive(false);
     }
 
     public void AdjustSound(string sound)
@@ -53,6 +69,11 @@ public class UIManager : MonoBehaviour
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

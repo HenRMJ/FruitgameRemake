@@ -18,12 +18,22 @@ public class SaveManager : MonoBehaviour
         Instance = this;
     }
 
-    public void SaveScore(int score)
+    public void SaveHighScore(int score)
     {
         if (score > GetHighScore())
         {
             ES3.Save("highScore", score);
         }
+    }
+
+    public void SaveAttempt(GameAttempt attempt)
+    {
+        ES3.Save("lastAttempt", attempt);
+    }
+
+    public GameAttempt GetLastAttempt()
+    {
+        return (GameAttempt)ES3.Load("lastAttempt");
     }
 
     public int GetHighScore()

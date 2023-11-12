@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BaseFruit : MonoBehaviour
 {
+    public static EventHandler OnFruitCombined;
+
     [SerializeField] private Fruit fruit;
     [SerializeField] private Sprite fruitUISprite;
 
@@ -43,6 +46,7 @@ public class BaseFruit : MonoBehaviour
                 if (combined = FruitProgression.Instance.TryCombineFruitAtPosition(transform, collision.transform, (int)fruit + 1))
                 {
                     ScoreManager.Instance.IncreaseScore(((int)fruit + 1) * 2);
+                    OnFruitCombined?.Invoke(this, EventArgs.Empty);
                     Destroy(gameObject);
                     Destroy(collision.gameObject);
                 }

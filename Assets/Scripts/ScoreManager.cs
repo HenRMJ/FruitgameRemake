@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TMP_Text scoreText, highScoreText;
 
     private int score;
+    private int fruitsCombined = 0;
     private bool lost;
     private bool newHighScore;
 
@@ -30,7 +31,19 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        BaseFruit.OnFruitCombined += BaseFruit_OnFruitCombined;
+
         UpdateText();
+    }
+
+    private void OnDestroy()
+    {
+        BaseFruit.OnFruitCombined -= BaseFruit_OnFruitCombined;
+    }
+
+    private void BaseFruit_OnFruitCombined(object sender, EventArgs e)
+    {
+        fruitsCombined++;
     }
 
     public void IncreaseScore(int valueToIncrease)
@@ -52,7 +65,23 @@ public class ScoreManager : MonoBehaviour
     public void LostGame()
     {
         lost = true;
-        SaveManager.Instance.SaveScore(score);
+        Fruit highestFruit = Fruit.One;
+
+        // Checking highest fruit in the game
+        foreach(BaseFruit fruit in FindObjectsOfType<BaseFruit>())
+        {
+            if (fruit.GetFruitType() > highestFruit)
+            {
+                highestFruit = fruit.GetFruitType();
+            }
+        }
+
+        // Saving
+        GameAttempt attempt = new GameAttempt(score, fruitsCombined, highestFruit);
+        SaveManager.Instance.SaveAttempt(attempt);
+        SaveManager.Instance.SaveHighScore(score);
+
+        // Resetting
         score = 0;
         OnLostGame?.Invoke(this, EventArgs.Empty);
         UpdateText();
@@ -62,7 +91,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (score > SaveManager.Instance.GetHighScore())
         {
-            SaveManager.Instance.SaveScore(score);
+            SaveManager.Instance.SaveHighScore(score);
 
             if (!newHighScore)
             {
