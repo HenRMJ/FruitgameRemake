@@ -3,15 +3,15 @@ using System;
 [Serializable]
 public enum Fruit
 {
-    One, 
-    Two, 
-    Three, 
-    Four,
-    Five, 
-    Six, 
-    Seven, 
-    Eight,
-    Nine,
-    Ten,
-    Eleven
+    Cherry, 
+    Strawberry, 
+    Grapes, 
+    Pomegranate,
+    Apple, 
+    Orange, 
+    Coconut, 
+    Banana,
+    Pineapple,
+    Watermelon,
+    Pumpkin
 }

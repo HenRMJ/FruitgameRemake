@@ -65,7 +65,7 @@ public class ScoreManager : MonoBehaviour
     public void LostGame()
     {
         lost = true;
-        Fruit highestFruit = Fruit.One;
+        Fruit highestFruit = Fruit.Cherry;
 
         // Checking highest fruit in the game
         foreach(BaseFruit fruit in FindObjectsOfType<BaseFruit>())
@@ -81,8 +81,6 @@ public class ScoreManager : MonoBehaviour
         SaveManager.Instance.SaveAttempt(attempt);
         SaveManager.Instance.SaveHighScore(score);
 
-        // Resetting
-        score = 0;
         OnLostGame?.Invoke(this, EventArgs.Empty);
         UpdateText();
     }

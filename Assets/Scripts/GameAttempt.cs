@@ -1,8 +1,8 @@
 public class GameAttempt
 {
-    private int score;
-    private int fruitsCombined;
-    private Fruit largestFruit;
+    public int score;
+    public int fruitsCombined;
+    public Fruit largestFruit;
 
     public GameAttempt(int score, int fruitsCombined, Fruit largestFruit)
     {
@@ -10,4 +10,8 @@ public class GameAttempt
         this.fruitsCombined = fruitsCombined;
         this.largestFruit = largestFruit;
     }
+
+    public int GetScore() => score;
+    public int GetFruitsCombined() => fruitsCombined;
+    public Fruit GetLargestFruit() => largestFruit;
 }

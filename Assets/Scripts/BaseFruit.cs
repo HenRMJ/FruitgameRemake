@@ -36,7 +36,7 @@ public class BaseFruit : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out BaseFruit baseFruit))
         {
-            if (fruit == Fruit.Eleven) return;
+            if (fruit == Fruit.Pumpkin) return;
             if (combined) return;
 
             if (baseFruit.GetFruitType() == fruit)
