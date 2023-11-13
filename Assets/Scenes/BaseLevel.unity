@@ -1331,7 +1331,7 @@ MonoBehaviour:
   combinationUIParent: {fileID: 1764559104}
   imagePrefab: {fileID: 2324350009508999053, guid: 7e26741da76df6d4c9081f198209238b, type: 3}
   generateFixedFruit: 0
-  fruitToGenerate: 4
+  fruitToGenerate: 10
 --- !u!4 &391492476
 Transform:
   m_ObjectHideFlags: 0

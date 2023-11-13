@@ -15,3 +15,10 @@ public enum Fruit
     Watermelon,
     Pumpkin
 }
+
+[Serializable]
+public enum GameMode
+{
+    Classic,
+    Endless
+}

@@ -11,6 +11,7 @@ public class BaseFruit : MonoBehaviour
     [SerializeField] private Sprite fruitUISprite;
 
     public int ID;
+
     private bool combined;
     private bool isHeld;
 
@@ -36,6 +37,8 @@ public class BaseFruit : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out BaseFruit baseFruit))
         {
+            EndlessMode(baseFruit, collision);
+
             if (fruit == Fruit.Pumpkin) return;
             if (combined) return;
 
@@ -49,8 +52,26 @@ public class BaseFruit : MonoBehaviour
                     OnFruitCombined?.Invoke(this, EventArgs.Empty);
                     Destroy(gameObject);
                     Destroy(collision.gameObject);
-                }
-                
+                } 
+            }
+        }
+    }
+
+    private void EndlessMode(BaseFruit baseFruit, Collision2D collision)
+    {
+        if (SaveManager.Instance.Mode == GameMode.Endless)
+        {
+            if (fruit != Fruit.Pumpkin) return;
+
+            if (combined) return;
+
+            if (baseFruit.GetFruitType() == fruit)
+            {
+                if (ID <= baseFruit.ID) return;
+
+                OnFruitCombined?.Invoke(this, EventArgs.Empty);
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
             }
         }
     }

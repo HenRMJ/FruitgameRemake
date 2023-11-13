@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
+
+    public GameMode Mode { get; private set; }
 
     private void Awake()
     {
@@ -16,6 +19,15 @@ public class SaveManager : MonoBehaviour
         }
 
         Instance = this;
+
+        if (ES3.KeyExists("mode"))
+        {
+            Mode = GetGameMode();
+        }
+        else
+        {
+            Mode = GameMode.Classic;
+        }
     }
 
     public void SaveHighScore(int score)
@@ -24,6 +36,35 @@ public class SaveManager : MonoBehaviour
         {
             ES3.Save("highScore", score);
         }
+    }
+
+    public void SaveGameMode(GameMode mode)
+    {
+        ES3.Save("mode", mode);
+    }
+
+    public void SaveGameMode(string mode)
+    {
+        switch(mode)
+        {
+            case "Classic":
+                SaveGameMode(GameMode.Classic);
+                break;
+            case "Endless":
+                SaveGameMode(GameMode.Endless);
+                break;
+
+        }
+    }
+
+    private GameMode GetGameMode()
+    {
+        if (ES3.KeyExists("mode"))
+        {
+            return (GameMode)ES3.Load("mode");
+        }
+
+        return GameMode.Classic;
     }
 
     public void SaveAttempt(GameAttempt attempt)
