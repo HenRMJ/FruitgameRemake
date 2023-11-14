@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
@@ -32,9 +29,15 @@ public class SaveManager : MonoBehaviour
 
     public void SaveHighScore(int score)
     {
-        if (score > GetHighScore())
+        if (score > GetHighScore(Mode))
         {
-            ES3.Save("highScore", score);
+            if (Mode == GameMode.Classic)
+            {
+                ES3.Save("highScore", score);
+            } else
+            {
+                ES3.Save("highScoreEndless", score);
+            }
         }
     }
 
@@ -77,14 +80,26 @@ public class SaveManager : MonoBehaviour
         return (GameAttempt)ES3.Load("lastAttempt");
     }
 
-    public int GetHighScore()
+    public int GetHighScore(GameMode mode)
     {
         int returnValue = 0;
-
-        if (ES3.KeyExists("highScore"))
+        
+        switch (mode)
         {
-            returnValue = (int)ES3.Load("highScore");
+            case GameMode.Classic:
+                if (ES3.KeyExists("highScore"))
+                {
+                    returnValue = (int)ES3.Load("highScore");
+                }
+                break;
+            case GameMode.Endless:
+                if (ES3.KeyExists("highScoreEndless"))
+                {
+                    returnValue = (int)ES3.Load("highScoreEndless");
+                }
+                break;
         }
+        
 
         return returnValue;
     }

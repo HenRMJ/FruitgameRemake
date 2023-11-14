@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Dan.Main;
@@ -9,17 +7,26 @@ public class Leaderboard : MonoBehaviour
     [SerializeField] private TMP_InputField inputField;
     [SerializeField] private Transform leadboardPrefab;
     [SerializeField] private RectTransform contentParent;
+    [SerializeField] private bool autoLoadBoard;
+    [SerializeField] private GameMode mode;
 
-    private const string PUBLIC_LEADERBOARD_KEY = "54efd0143bae947553c51d294c8c6d755ae1f1c5abd783a58f83a3cab713ec04";
+    private string PUBLIC_CLASSIC_KEY = Keys.Classic;
+    private string PUBLIC_ENDLESS_KEY = Keys.Endless;
 
     private void Start()
     {
-        GetLeaderboard();
+        if (!autoLoadBoard) return;
+
+        AutoLoadLeaderboard();
     }
 
-    public void GetLeaderboard()
+    public void AutoLoadLeaderboard()
     {
-        LeaderboardCreator.GetLeaderboard(PUBLIC_LEADERBOARD_KEY, ((msg) =>
+        string key = string.Empty;
+
+        key = SaveManager.Instance.Mode == GameMode.Classic ? PUBLIC_CLASSIC_KEY : PUBLIC_ENDLESS_KEY;
+
+        LeaderboardCreator.GetLeaderboard(key, ((msg) =>
         {
             float prefabSize = leadboardPrefab.GetComponent<RectTransform>().rect.size.y;
 
@@ -40,10 +47,14 @@ public class Leaderboard : MonoBehaviour
     {
         if (inputField.text == string.Empty) return;
 
-        LeaderboardCreator.UploadNewEntry(PUBLIC_LEADERBOARD_KEY, inputField.text, SaveManager.Instance.GetHighScore(), ((msg) =>
+        string key = string.Empty;
+
+        key = SaveManager.Instance.Mode == GameMode.Classic ? PUBLIC_CLASSIC_KEY : PUBLIC_ENDLESS_KEY;
+
+        LeaderboardCreator.UploadNewEntry(key, inputField.text, SaveManager.Instance.GetHighScore(SaveManager.Instance.Mode), ((msg) =>
         {
             ClearLeaderboard();
-            GetLeaderboard();
+            AutoLoadLeaderboard();
         }));
     }
 

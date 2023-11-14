@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
@@ -59,7 +57,7 @@ public class ScoreManager : MonoBehaviour
     private void UpdateText()
     {
         scoreText.text = score.ToString();
-        highScoreText.text = SaveManager.Instance.GetHighScore().ToString();
+        highScoreText.text = SaveManager.Instance.GetHighScore(SaveManager.Instance.Mode).ToString();
     }
 
     public void LostGame()
@@ -74,10 +72,12 @@ public class ScoreManager : MonoBehaviour
             {
                 highestFruit = fruit.GetFruitType();
             }
+
+            if (highestFruit == Fruit.Pumpkin) break;
         }
 
         // Saving
-        GameAttempt attempt = new GameAttempt(score, fruitsCombined, highestFruit);
+        GameAttempt attempt = new GameAttempt(score, fruitsCombined, highestFruit,SaveManager.Instance.Mode);
         SaveManager.Instance.SaveAttempt(attempt);
         SaveManager.Instance.SaveHighScore(score);
 
@@ -87,7 +87,7 @@ public class ScoreManager : MonoBehaviour
 
     private void CheckHighscore()
     {
-        if (score > SaveManager.Instance.GetHighScore())
+        if (score > SaveManager.Instance.GetHighScore(SaveManager.Instance.Mode))
         {
             SaveManager.Instance.SaveHighScore(score);
 

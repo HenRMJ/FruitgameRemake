@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -17,7 +15,7 @@ public class DetailsUI : MonoBehaviour
         combinedFruitsText.text = attempt.GetFruitsCombined().ToString();
         largestFruitText.text = attempt.GetLargestFruit().ToString();
         scoreText.text = attempt.GetScore().ToString();
-        highScoreText.text = SaveManager.Instance.GetHighScore().ToString();
+        highScoreText.text = SaveManager.Instance.GetHighScore(SaveManager.Instance.Mode).ToString();
     }
 
     public void LoadScene(string sceneName)
