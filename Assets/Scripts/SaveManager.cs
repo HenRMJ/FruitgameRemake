@@ -31,12 +31,17 @@ public class SaveManager : MonoBehaviour
     {
         if (score > GetHighScore(Mode))
         {
-            if (Mode == GameMode.Classic)
+            switch (Mode)
             {
-                ES3.Save("highScore", score);
-            } else
-            {
-                ES3.Save("highScoreEndless", score);
+                case GameMode.Classic:
+                    ES3.Save("highScore", score);
+                    break;
+                case GameMode.Endless:
+                    ES3.Save("highScoreEndless", score);
+                    break;
+                case GameMode.Quick:
+                    ES3.Save("highScoreQuick", score);
+                    break;
             }
         }
     }
@@ -56,7 +61,9 @@ public class SaveManager : MonoBehaviour
             case "Endless":
                 SaveGameMode(GameMode.Endless);
                 break;
-
+            case "Quick":
+                SaveGameMode(GameMode.Quick);
+                break;
         }
     }
 
@@ -98,9 +105,14 @@ public class SaveManager : MonoBehaviour
                     returnValue = (int)ES3.Load("highScoreEndless");
                 }
                 break;
+            case GameMode.Quick:
+                if (ES3.KeyExists("highScoreQuick"))
+                {
+                    returnValue = (int)ES3.Load("highScoreQuick");
+                }
+                break;
         }
         
-
         return returnValue;
     }
 }

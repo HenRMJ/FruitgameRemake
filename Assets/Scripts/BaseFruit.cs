@@ -68,8 +68,15 @@ public class BaseFruit : MonoBehaviour
                 if (ID <= baseFruit.ID) return;
 
                 OnFruitCombined?.Invoke(this, EventArgs.Empty);
-                Destroy(gameObject);
-                Destroy(collision.gameObject);
+                foreach (BaseFruit fruit in FindObjectsOfType<BaseFruit>())
+                {
+                    if (fruit.isHeld)
+                    {
+                        continue;
+                    }
+
+                    Destroy(fruit.gameObject);
+                }
             }
         }
     }

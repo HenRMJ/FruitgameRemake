@@ -8,9 +8,12 @@ public class Dropper : MonoBehaviour
 
     private PlayerControls playerControls;
 
-    [SerializeField] private float speed, staticLeftLimit, staticRightLimit;
+    [SerializeField] private float speed;
     [SerializeField] private Transform fruitInstatiationSlot;
+    [SerializeField] private BoxCollider2D leftWall, rightWall;
 
+
+    private Bounds leftBound, rightBound;
     private float leftLimit, rightLimit;
     private Transform fruitHeld;
     private BaseFruit fruit;
@@ -24,6 +27,8 @@ public class Dropper : MonoBehaviour
 
     private void Start()
     {
+        leftBound = leftWall.bounds;
+        rightBound = rightWall.bounds;
         InstantiateNewFruit();
     }
 
@@ -90,6 +95,9 @@ public class Dropper : MonoBehaviour
         collider.enabled = true;
         Bounds fruitBound = collider.bounds;
         collider.enabled = false;
+
+        float staticLeftLimit = leftBound.extents.x + leftBound.center.x;
+        float staticRightLimit = rightBound.center.x - rightBound.extents.x;
 
         leftLimit = staticLeftLimit + fruitBound.extents.x;
         rightLimit = staticRightLimit - fruitBound.extents.x;

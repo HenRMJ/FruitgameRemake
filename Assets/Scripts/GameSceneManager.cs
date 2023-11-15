@@ -26,4 +26,17 @@ public class GameSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void LoadLastGameMode()
+    {
+        switch (SaveManager.Instance.Mode)
+        {
+            case GameMode.Quick:
+                LoadNewScene("QuickPlay");
+                break;
+            default:
+                LoadNewScene("BaseLevel");
+                break;
+        }
+    }
 }

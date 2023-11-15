@@ -46,20 +46,6 @@ public class UIManager : MonoBehaviour
         nextFruitUI.SetActive(false);
     }
 
-    public void AdjustSound(string sound)
-    {
-        if (sound == "music")
-        {
-            ES3.Save("musicVolume", musicSlider.value);
-            SoundManager.Instance.GetAudioSource().volume = (float)ES3.Load("musicVolume");
-        }
-        else
-        {
-            ES3.Save("sfxSlider", sfxSlider.value);
-            SoundManager.Instance.SetSoundEffectVolume((float)ES3.Load("sfxSlider"));
-        }
-    }
-
     public void ToggleSettings()
     {
         settingsOpen = !settingsOpen;

@@ -19,6 +19,7 @@ public enum Fruit
 [Serializable]
 public enum GameMode
 {
+    Quick,
     Classic,
     Endless
 }
