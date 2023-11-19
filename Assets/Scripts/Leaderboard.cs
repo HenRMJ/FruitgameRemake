@@ -99,9 +99,20 @@ public class Leaderboard : MonoBehaviour
     {
         if (inputField.text == string.Empty) return;
 
+        GameMode gameMode;
+
+        if (autoLoadBoard)
+        {
+            gameMode = SaveManager.Instance.Mode;
+        }
+        else
+        {
+            gameMode = mode;
+        }
+
         string key = string.Empty;
 
-        switch (SaveManager.Instance.Mode)
+        switch (gameMode)
         {
             case GameMode.Classic:
                 key = PUBLIC_CLASSIC_KEY;
@@ -115,10 +126,10 @@ public class Leaderboard : MonoBehaviour
 
         }
 
-        LeaderboardCreator.UploadNewEntry(key, inputField.text, SaveManager.Instance.GetHighScore(SaveManager.Instance.Mode), ((msg) =>
+        LeaderboardCreator.UploadNewEntry(key, inputField.text, SaveManager.Instance.GetHighScore(gameMode), ((msg) =>
         {
             ClearLeaderboard();
-            AutoLoadLeaderboard();
+            LoadSpecificLeadboard(gameMode);
         }));
     }
 

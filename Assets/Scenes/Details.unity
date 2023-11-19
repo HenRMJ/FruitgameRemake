@@ -377,6 +377,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c216c4fb684db134c9cdf8441b831f9f, type: 3}
+--- !u!114 &232041300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2452114811308096172, guid: c216c4fb684db134c9cdf8441b831f9f, type: 3}
+  m_PrefabInstance: {fileID: 232041299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b588419570d9394a94ff4cef1addb7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &249525239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,7 +2848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2756134321428472964, guid: 410d51ce26e9513418eb33fac8ae71a0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00002684449
+      value: -0.000095699994
       objectReference: {fileID: 0}
     - target: {fileID: 6184771104620462281, guid: 410d51ce26e9513418eb33fac8ae71a0, type: 3}
       propertyPath: m_Name
@@ -2934,6 +2945,22 @@ PrefabInstance:
     - target: {fileID: 8168082599934451660, guid: 410d51ce26e9513418eb33fac8ae71a0, type: 3}
       propertyPath: m_Size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406933083050480234, guid: 410d51ce26e9513418eb33fac8ae71a0, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406933083050480234, guid: 410d51ce26e9513418eb33fac8ae71a0, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 232041300}
+    - target: {fileID: 8406933083050480234, guid: 410d51ce26e9513418eb33fac8ae71a0, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenKeyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406933083050480234, guid: 410d51ce26e9513418eb33fac8ae71a0, type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: KeyboardScript, Assembly-CSharp-firstpass
       objectReference: {fileID: 0}
     - target: {fileID: 8636777965641756534, guid: 410d51ce26e9513418eb33fac8ae71a0, type: 3}
       propertyPath: autoLoadBoard

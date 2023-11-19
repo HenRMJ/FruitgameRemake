@@ -23,3 +23,12 @@ public enum GameMode
     Classic,
     Endless
 }
+
+[Serializable]
+public enum BatteryMode
+{
+    Extreme = 15,
+    On = 30,
+    Low = 60,
+    Off = -1
+}

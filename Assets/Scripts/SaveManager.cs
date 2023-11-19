@@ -115,4 +115,23 @@ public class SaveManager : MonoBehaviour
         
         return returnValue;
     }
+
+    public void SaveUIPoistions(string key, Vector2 position)
+    {
+        ES3.Save<Vector2>(key, position);
+    }
+
+    public bool TryLoadUIPosition(string key, out Vector2 position)
+    {
+        bool returnValue = ES3.KeyExists(key);
+
+        position = new Vector2();
+
+        if (returnValue)
+        {
+            position = ES3.Load<Vector2>(key);
+        }
+
+        return returnValue;
+    }
 }
