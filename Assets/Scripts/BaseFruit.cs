@@ -37,7 +37,7 @@ public class BaseFruit : MonoBehaviour
         {
             EndlessMode(baseFruit, collision);
 
-            if (fruit == Fruit.Pumpkin) return;
+            if (fruit == Fruit.Pumpkin) { SoundManager.Instance.PlayBounceSound(); return; } 
             if (combined) return;
 
             if (baseFruit.GetFruitType() == fruit)
@@ -47,11 +47,16 @@ public class BaseFruit : MonoBehaviour
                 if (combined = FruitProgression.Instance.TryCombineFruitAtPosition(transform, collision.transform, (int)fruit + 1))
                 {
                     ScoreManager.Instance.IncreaseScore(((int)fruit + 1) * 2);
+                    SoundManager.Instance.PlayFusionSound();
                     OnFruitCombined?.Invoke(this, EventArgs.Empty);
                     Destroy(gameObject);
                     Destroy(collision.gameObject);
                 } 
             }
+        }
+        else
+        {
+            SoundManager.Instance.PlayBounceSound();
         }
     }
 

@@ -8,6 +8,8 @@ public class ScoreManager : MonoBehaviour
 
     public event EventHandler OnLostGame;
 
+    private FMODUnity.StudioEventEmitter soundHighScore;
+
     [SerializeField] private TMP_Text scoreText, highScoreText;
 
     private int score;
@@ -25,6 +27,8 @@ public class ScoreManager : MonoBehaviour
         }
 
         Instance = this;
+
+        soundHighScore = GetComponent<FMODUnity.StudioEventEmitter>();
     }
 
     private void Start()
@@ -94,7 +98,7 @@ public class ScoreManager : MonoBehaviour
             if (!newHighScore)
             {
                 newHighScore = true;
-                SoundManager.Instance.PlaySound("Highscore");
+                soundHighScore.Play();
             }
         }        
     }

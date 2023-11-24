@@ -17,13 +17,22 @@ public class Dropper : MonoBehaviour
     private float leftLimit, rightLimit;
     private Transform fruitHeld;
     private BaseFruit fruit;
+    private FMODUnity.StudioEventEmitter cloudMove;
 
     private void Awake()
     {
+
         playerControls = new PlayerControls();
 
         playerControls.Player.Drop.performed += OnDrop;
+
+        playerControls.Player.Move.started += OnMoveStarted;
+
+        playerControls.Player.Move.canceled += OnMoveCanceled;
+
+        cloudMove = GetComponent<FMODUnity.StudioEventEmitter>();
     }
+
 
     private void Start()
     {
@@ -55,7 +64,14 @@ public class Dropper : MonoBehaviour
 
     public void OnDisable()
     {
+        playerControls.Player.Drop.performed -= OnDrop;
+
+        playerControls.Player.Move.started -= OnMoveStarted;
+
+        playerControls.Player.Move.canceled -= OnMoveCanceled;
+
         playerControls.Disable();
+
     }
 
     public void OnDrop(InputAction.CallbackContext callbackContext)
@@ -64,12 +80,23 @@ public class Dropper : MonoBehaviour
         DropFruit();
     }
 
+    public void OnMoveStarted(InputAction.CallbackContext callbackContext)
+    {
+        if (ScoreManager.Instance.HasLost()) return;
+        cloudMove.Play();
+    }
+
+    public void OnMoveCanceled(InputAction.CallbackContext callbackContext)
+    {
+        if (ScoreManager.Instance.HasLost()) return;
+        cloudMove.Stop();
+    }
+
     private void DropFruit()
     {
         fruitHeld.parent = null;
         fruit.IsHeld = false;
         InstantiateNewFruit();
-        SoundManager.Instance.PlaySound("Drop");
         fruitDropped?.Invoke(this, EventArgs.Empty);
     }
 

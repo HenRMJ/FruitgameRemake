@@ -22,13 +22,11 @@ public class UIManager : MonoBehaviour
         if (ES3.KeyExists("musicVolume"))
         {
             musicSlider.value = (float)ES3.Load("musicVolume");
-            SoundManager.Instance.GetAudioSource().volume = (float)ES3.Load("musicVolume");
         }
 
         if (ES3.KeyExists("sfxSlider"))
         {
             sfxSlider.value = (float)ES3.Load("sfxSlider");
-            SoundManager.Instance.SetSoundEffectVolume((float)ES3.Load("sfxSlider"));
         }
 
         ScoreManager.Instance.OnLostGame += ScoreManager_OnLostGame;

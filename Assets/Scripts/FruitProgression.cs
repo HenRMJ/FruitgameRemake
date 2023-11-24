@@ -69,7 +69,6 @@ public class FruitProgression : MonoBehaviour
 
         newFruit.ID = ID;
 
-        SoundManager.Instance.PlaySound("Combine");
         OnFruitCombined?.Invoke(this, EventArgs.Empty);
 
         return true;

@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 6940429464419489944}
   - component: {fileID: 1191904757709152811}
   - component: {fileID: 4035566736165261562}
+  - component: {fileID: 3604851390313700373}
   m_Layer: 5
   m_Name: Settings Button
   m_TagString: Untagged
@@ -294,6 +295,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementName: settingsPosition
   inGame: 1
+--- !u!114 &3604851390313700373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420561479112142858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -765316192
+      Data2: 1208330427
+      Data3: -644126079
+      Data4: -185021196
+    Path: event:/UI/SettingsDrop
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2742368156048961186
 GameObject:
   m_ObjectHideFlags: 0

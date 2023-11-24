@@ -600,6 +600,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89961787}
   m_CullTransparentMesh: 1
+--- !u!1 &156649377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 156649379}
+  - component: {fileID: 156649378}
+  m_Layer: 0
+  m_Name: BounceSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &156649378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156649377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -389475681
+      Data2: 1076037878
+      Data3: -480933194
+      Data4: 108187453
+    Path: event:/Player/FruitBounce
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &156649379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156649377}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 161891490}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &161891488
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +694,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1946782206}
+  - {fileID: 156649379}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &161891491
@@ -646,16 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872e9218240b51d4f93b7dad0f00eeed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - name: Drop
-    clip: {fileID: 8300000, guid: 53fc2389798f41b42a34fdf0f5942bd7, type: 3}
-    volume: 0.452
-  - name: Combine
-    clip: {fileID: 8300000, guid: daa8a5f4cf859064ebf8178e7d21e4b2, type: 3}
-    volume: 1
-  - name: Highscore
-    clip: {fileID: 8300000, guid: 2b409d1820f0a8d46b3151a33b604f41, type: 3}
-    volume: 2
+  BounceSound: {fileID: 156649378}
+  FusionSound: {fileID: 1946782205}
 --- !u!114 &161891492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,6 +856,7 @@ GameObject:
   - component: {fileID: 257405339}
   - component: {fileID: 257405338}
   - component: {fileID: 257405342}
+  - component: {fileID: 257405343}
   m_Layer: 5
   m_Name: Move Left Button
   m_TagString: Untagged
@@ -934,6 +992,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementName: leftPosition
   inGame: 1
+--- !u!114 &257405343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257405336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1793956746
+      Data2: 1319549260
+      Data3: -766513772
+      Data4: -629305487
+    Path: event:/UI/UI_Buttom
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &270795434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,6 +1785,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557750862}
   - component: {fileID: 557750863}
+  - component: {fileID: 557750864}
   m_Layer: 0
   m_Name: Fruit Spawn Point
   m_TagString: Untagged
@@ -1736,6 +1826,37 @@ MonoBehaviour:
   fruitInstatiationSlot: {fileID: 557750862}
   leftWall: {fileID: 1382607551}
   rightWall: {fileID: 1356466535}
+--- !u!114 &557750864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557750861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1409907020
+      Data2: 1273727550
+      Data3: -235072085
+      Data4: -1494691489
+    Path: event:/Player/CloudMove
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &602876173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,6 +2252,7 @@ GameObject:
   - component: {fileID: 767562478}
   - component: {fileID: 767562477}
   - component: {fileID: 767562476}
+  - component: {fileID: 767562479}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -2252,6 +2374,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767562474}
   m_CullTransparentMesh: 1
+--- !u!114 &767562479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767562474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 138060758
+      Data2: 1137271255
+      Data3: 860456858
+      Data4: -1898515282
+    Path: event:/UI/SettingsGather
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &780102427
 GameObject:
   m_ObjectHideFlags: 0
@@ -4548,6 +4701,7 @@ GameObject:
   - component: {fileID: 1461469013}
   - component: {fileID: 1461469012}
   - component: {fileID: 1461469016}
+  - component: {fileID: 1461469017}
   m_Layer: 5
   m_Name: Move Right Button
   m_TagString: Untagged
@@ -4683,6 +4837,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementName: rightPosition
   inGame: 1
+--- !u!114 &1461469017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461469010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1793956746
+      Data2: 1319549260
+      Data3: -766513772
+      Data4: -629305487
+    Path: event:/UI/UI_Buttom
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1477598145
 GameObject:
   m_ObjectHideFlags: 0
@@ -4772,6 +4957,7 @@ GameObject:
   - component: {fileID: 1485360430}
   - component: {fileID: 1485360429}
   - component: {fileID: 1485360433}
+  - component: {fileID: 1485360434}
   m_Layer: 5
   m_Name: Drop Button
   m_TagString: Untagged
@@ -4908,6 +5094,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementName: dropPosition
   inGame: 1
+--- !u!114 &1485360434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485360427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1388965135
+      Data2: 1260508003
+      Data3: -1915932534
+      Data4: 1414385883
+    Path: event:/Player/Drop
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1517013215
 GameObject:
   m_ObjectHideFlags: 0
@@ -5575,6 +5792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1724214358}
   - component: {fileID: 1724214357}
+  - component: {fileID: 1724214359}
   m_Layer: 0
   m_Name: Score Manager
   m_TagString: Untagged
@@ -5611,6 +5829,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1724214359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724214356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -279368580
+      Data2: 1223417666
+      Data3: -2069852766
+      Data4: -79694517
+    Path: event:/Dialogue/NewScore
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1764559103
 GameObject:
   m_ObjectHideFlags: 0
@@ -6208,6 +6457,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elementName: nextFruitPosition
   inGame: 1
+--- !u!1 &1946782204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1946782206}
+  - component: {fileID: 1946782205}
+  m_Layer: 0
+  m_Name: FusionSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1946782205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946782204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -792222035
+      Data2: 1213945742
+      Data3: 552570786
+      Data4: -2043852326
+    Path: event:/Player/FruitFusion
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1946782206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946782204}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 161891490}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1980068500
 GameObject:
   m_ObjectHideFlags: 0
