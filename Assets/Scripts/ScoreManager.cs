@@ -68,6 +68,7 @@ public class ScoreManager : MonoBehaviour
     {
         lost = true;
         Fruit highestFruit = Fruit.Cherry;
+        
 
         // Checking highest fruit in the game
         foreach(BaseFruit fruit in FindObjectsOfType<BaseFruit>())

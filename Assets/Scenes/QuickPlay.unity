@@ -735,7 +735,7 @@ MonoBehaviour:
     Path: event:/Musics/Music1
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadEvent: 1
+  LoadEvent: 0
   UnloadEvent: 0
   Banks:
   - Master
@@ -5793,6 +5793,7 @@ GameObject:
   - component: {fileID: 1724214358}
   - component: {fileID: 1724214357}
   - component: {fileID: 1724214359}
+  - component: {fileID: 1724214360}
   m_Layer: 0
   m_Name: Score Manager
   m_TagString: Untagged
@@ -5849,6 +5850,37 @@ MonoBehaviour:
       Data3: -2069852766
       Data4: -79694517
     Path: event:/Dialogue/NewScore
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1724214360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724214356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 579129716
+      Data2: 1075767469
+      Data3: -1330027633
+      Data4: -580847554
+    Path: event:/Dialogue/YouLose
   Event: 
   PlayEvent: 0
   StopEvent: 0
