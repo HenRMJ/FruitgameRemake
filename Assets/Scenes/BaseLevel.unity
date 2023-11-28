@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1283,6 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557750862}
   - component: {fileID: 557750863}
+  - component: {fileID: 557750864}
   m_Layer: 0
   m_Name: Fruit Spawn Point
   m_TagString: Untagged
@@ -1323,6 +1324,37 @@ MonoBehaviour:
   fruitInstatiationSlot: {fileID: 557750862}
   leftWall: {fileID: 1382607551}
   rightWall: {fileID: 1356466535}
+--- !u!114 &557750864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557750861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1409907020
+      Data2: 1273727550
+      Data3: -235072085
+      Data4: -1494691489
+    Path: event:/Player/CloudMove
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &602876173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,6 +1848,7 @@ GameObject:
   - component: {fileID: 767562478}
   - component: {fileID: 767562477}
   - component: {fileID: 767562476}
+  - component: {fileID: 767562479}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -1937,6 +1970,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767562474}
   m_CullTransparentMesh: 1
+--- !u!114 &767562479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767562474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 138060758
+      Data2: 1137271255
+      Data3: 860456858
+      Data4: -1898515282
+    Path: event:/UI/SettingsGather
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &780102427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2632,7 +2696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2640,14 +2704,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -2715,6 +2771,19 @@ Transform:
   - {fileID: 1372396949}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &976303502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,6 +3534,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293467484}
   m_CullTransparentMesh: 1
+--- !u!1 &1297776003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1297776005}
+  - component: {fileID: 1297776004}
+  m_Layer: 0
+  m_Name: Fusion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1297776004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297776003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -792222035
+      Data2: 1213945742
+      Data3: 552570786
+      Data4: -2043852326
+    Path: event:/Player/FruitFusion
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1297776005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297776003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1367733022905008034}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1305666220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4391,6 +4523,69 @@ RectTransform:
   m_AnchoredPosition: {x: -80.49701, y: -5.0895996}
   m_SizeDelta: {x: 136.11, y: -15.712}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1656669968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1656669970}
+  - component: {fileID: 1656669969}
+  m_Layer: 0
+  m_Name: Bounce
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1656669969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656669968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -389475681
+      Data2: 1076037878
+      Data3: -480933194
+      Data4: 108187453
+    Path: event:/Player/FruitBounce
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1656669970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656669968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1367733022905008034}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1697986393
 GameObject:
   m_ObjectHideFlags: 0
@@ -5564,13 +5759,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1420561479112142858, guid: b51023a66d9b13f4fbed0124ab56492e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2037454483}
   m_SourcePrefab: {fileID: 100100000, guid: b51023a66d9b13f4fbed0124ab56492e, type: 3}
 --- !u!224 &2037454481 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5776030208115122972, guid: b51023a66d9b13f4fbed0124ab56492e, type: 3}
   m_PrefabInstance: {fileID: 2037454480}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2037454482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1420561479112142858, guid: b51023a66d9b13f4fbed0124ab56492e, type: 3}
+  m_PrefabInstance: {fileID: 2037454480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2037454483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037454482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -765316192
+      Data2: 1208330427
+      Data3: -644126079
+      Data4: -185021196
+    Path: event:/UI/SettingsDrop
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!224 &2067519651 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6167442152030188763, guid: 2fcf09701451f354f8059dcd58e27f0c, type: 3}
@@ -5816,8 +6050,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3907669809319035638, guid: 3db6ad7ebc5336645a84150770554f3c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 777544407510383398}
   m_SourcePrefab: {fileID: 100100000, guid: 3db6ad7ebc5336645a84150770554f3c, type: 3}
+--- !u!1 &777544407510383397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3907669809319035638, guid: 3db6ad7ebc5336645a84150770554f3c, type: 3}
+  m_PrefabInstance: {fileID: 777544407510383396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &777544407510383398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777544407510383397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1793956746
+      Data2: 1319549260
+      Data3: -766513772
+      Data4: -629305487
+    Path: event:/UI/UI_Buttom
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &931635053639184675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5913,8 +6186,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2132915204536468790, guid: 9c75fd5bced2fb24fb92a64fae80541e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 931635053639184677}
   m_SourcePrefab: {fileID: 100100000, guid: 9c75fd5bced2fb24fb92a64fae80541e, type: 3}
+--- !u!1 &931635053639184676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2132915204536468790, guid: 9c75fd5bced2fb24fb92a64fae80541e, type: 3}
+  m_PrefabInstance: {fileID: 931635053639184675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &931635053639184677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931635053639184676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1793956746
+      Data2: 1319549260
+      Data3: -766513772
+      Data4: -629305487
+    Path: event:/UI/UI_Buttom
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1367733022905008032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5923,6 +6235,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1791136629886103464, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
+      propertyPath: BounceSound
+      value: 
+      objectReference: {fileID: 1656669969}
+    - target: {fileID: 1791136629886103464, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
+      propertyPath: FusionSound
+      value: 
+      objectReference: {fileID: 1297776004}
     - target: {fileID: 2554503798615359386, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5967,11 +6287,83 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sound Manager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3104468012813348055, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2554503798615359386, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1656669970}
+    - targetCorrespondingSourceObject: {fileID: 2554503798615359386, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1297776005}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5339188020527266787, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1367733022905008036}
+    - targetCorrespondingSourceObject: {fileID: 5339188020527266787, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1367733022905008035}
   m_SourcePrefab: {fileID: 100100000, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
+--- !u!1 &1367733022905008033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5339188020527266787, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
+  m_PrefabInstance: {fileID: 1367733022905008032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1367733022905008034 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2554503798615359386, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
+  m_PrefabInstance: {fileID: 1367733022905008032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1367733022905008035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367733022905008033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 894247505
+      Data2: 1116091046
+      Data3: -768669290
+      Data4: 1893566817
+    Path: event:/Musics/Music1
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1367733022905008036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367733022905008033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadEvent: 0
+  UnloadEvent: 0
+  Banks:
+  - Master
+  CollisionTag: 
+  PreloadSamples: 0
 --- !u!1001 &2775756216706868157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6181,8 +6573,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3741611589033150414, guid: e9a4fce9d53b97f49b7f75d25bbd8e56, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6267383367903870390}
   m_SourcePrefab: {fileID: 100100000, guid: e9a4fce9d53b97f49b7f75d25bbd8e56, type: 3}
+--- !u!1 &6267383367903870389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3741611589033150414, guid: e9a4fce9d53b97f49b7f75d25bbd8e56, type: 3}
+  m_PrefabInstance: {fileID: 6267383367903870388}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6267383367903870390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6267383367903870389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1388965135
+      Data2: 1260508003
+      Data3: -1915932534
+      Data4: 1414385883
+    Path: event:/Player/Drop
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &6463239096913660084
 PrefabInstance:
   m_ObjectHideFlags: 0

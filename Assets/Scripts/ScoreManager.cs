@@ -8,7 +8,8 @@ public class ScoreManager : MonoBehaviour
 
     public event EventHandler OnLostGame;
 
-    private FMODUnity.StudioEventEmitter soundHighScore;
+    [SerializeField] private FMODUnity.StudioEventEmitter soundHighScore;
+    [SerializeField] private FMODUnity.StudioEventEmitter youLoseSound;
 
     [SerializeField] private TMP_Text scoreText, highScoreText;
 
@@ -28,7 +29,7 @@ public class ScoreManager : MonoBehaviour
 
         Instance = this;
 
-        soundHighScore = GetComponent<FMODUnity.StudioEventEmitter>();
+        
     }
 
     private void Start()
@@ -66,8 +67,11 @@ public class ScoreManager : MonoBehaviour
 
     public void LostGame()
     {
+        if (lost) return;
         lost = true;
         Fruit highestFruit = Fruit.Cherry;
+        youLoseSound.Play();
+
         
 
         // Checking highest fruit in the game

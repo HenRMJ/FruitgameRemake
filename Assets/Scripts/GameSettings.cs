@@ -10,12 +10,14 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private Slider musicSlider, sfxSlider;
     [SerializeField] private Toggle oskSetting;
     [SerializeField] private TMP_Dropdown batteryDropdown;
+    [SerializeField] private FMODUnity.StudioGlobalParameterTrigger volumeGlobal;
 
     private void Start()
     {
         if (ES3.KeyExists("musicVolume"))
         {
             musicSlider.value = (float)ES3.Load("musicVolume");
+            volumeGlobal.Value = musicSlider.value;
         
         }
 

@@ -1118,7 +1118,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sound Manager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3104468012813348055, guid: 5efd23068b9ce8f49b100dc5d028e524, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2211,7 +2212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 853348793}
   - component: {fileID: 853348792}
-  - component: {fileID: 853348791}
+  - component: {fileID: 853348794}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2219,14 +2220,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &853348791
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853348790}
-  m_Enabled: 1
 --- !u!20 &853348792
 Camera:
   m_ObjectHideFlags: 0
@@ -2293,6 +2286,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &853348794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853348790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!114 &925810024 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8266075785301630761, guid: 243e7dc5b5a0bdc43ad17ee82ff7497d, type: 3}

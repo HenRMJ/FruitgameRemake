@@ -6,7 +6,7 @@
 [LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x2c3fd8208 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x15a49d608 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -17,6 +17,282 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x32badc638, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x32badc638
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x32ba23ae0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x32badc638
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x32badc638)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x32ba2a1c8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x32bae4d88)
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] OutputCoreAudio::init                    : Output running 2 channels at 44100Hz sample rate.
+[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
+[LOG] SystemI::startDriver                     : Output requires a sample rate of 44100Hz, resampling will occur.
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] OutputCoreAudio::init                    : Output running 2 channels at 44100Hz sample rate.
+[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 512 samples, Software buffer size: 512 samples, Number of software buffers: 4.
+[LOG] SystemI::startDriver                     : Output requires a sample rate of 44100Hz, resampling will occur.
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x2a8f3a208, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x2a8f3a208
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x2a8f7b660
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x2a8f3a208
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x2a8f3a208)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2a8f33d48)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2a8fa3ef8)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x2bf7d3828, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x2bf7d3828
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x2bf7d0b40
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x2bf7d3828
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x2bf7d3828)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2bf7a1c18)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2bf7af298)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3142fec38, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3142fec38
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x299d97670
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3142fec38
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x3142fec38)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x32baa8568)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2dced1358)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x2dcec4c68, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x2dcec4c68
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x32baaeeb0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x2dcec4c68
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x2dcec4c68)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2dcefadc8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2dce9e0b8)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x2dce9d1a8, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x2dce9d1a8
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x2a17a6580
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x2dce9d1a8
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x2dce9d1a8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2a117b3a8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2bf7d3828)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x3142fec38, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x3142fec38
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x299dfec30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x3142fec38
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x3142fec38)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x32ba96878)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x32bab8f28)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x2dcef7708, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x2dcef7708
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x32bace970
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x2dcef7708
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x2dcef7708)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x312b0eab8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2bf7d3828)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x2bf7d3828, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x2bf7d3828
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x2bf7ceff0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x2bf7d3828
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x2bf7d3828)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2a117b3a8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2a1105af8)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x31422f178, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x31422f178
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x299dfec30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x31422f178
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x31422f178)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x32baea5f8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2dce9e0b8)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x2bf7d3828, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x2bf7d3828
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x2bf7ceff0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x2bf7d3828
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x2bf7d3828)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x299d99258)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x31422f178)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x32cfa27d8, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x32cfa27d8
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x32cf97940
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x32cfa27d8
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x32cfa27d8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2a11e9ea8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2a118a898)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x2bf7851a8, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x2bf7851a8
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x2bf7bbc30
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x2bf7851a8
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x2bf7851a8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x299d6ca08)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x3142fec38)
+[LOG] SystemI::createSound                     : filename = ../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0x2dce52288, queue head = 0x3147cd768, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0x2dce52288
+[LOG] SystemI::createSoundInternal             :     Create name='../../../Users/antonioterroncarrasco/Desktop/FMOD_Fruit/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3195552
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23008
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0x2dce52550
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Happiness (Loopable)', format=5, channels=2, frequency=48000, lengthbytes=1687904, lengthpcm=5963293, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.998779.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0x2dce52288
+[WRN] SoundSourceInstrumentInstance::startChannelIfReady : Resource type 3 for instrument {20f54605-33cb-41f3-843b-3977ede0e373} has returned 13 and will now stop.
+[LOG] SoundI::release                          : Happiness (Loopable) (0x2dce52288)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2dce528e8)
+[LOG] SoundI::release                          :     Happiness (Loopable) (0x2dce52b48)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -24,3 +300,17 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] SoundI::release                          :  (0x2a1dfc478)
+[LOG] SoundI::release                          :     04 Glass Drop Emptying A Box Of Broken Glass Slowly Onto Table - Trimmed (0x3151a4d68)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.

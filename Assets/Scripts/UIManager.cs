@@ -7,6 +7,9 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private Slider musicSlider, sfxSlider;
     [SerializeField] private GameObject detailsPanel, combinationUI, nextFruitUI;
+    [SerializeField] private FMODUnity.StudioGlobalParameterTrigger volumeGlobal;
+
+    
 
     private Animator animator;
 
@@ -19,9 +22,11 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        
         if (ES3.KeyExists("musicVolume"))
         {
             musicSlider.value = (float)ES3.Load("musicVolume");
+            volumeGlobal.Value = musicSlider.value;
         }
 
         if (ES3.KeyExists("sfxSlider"))
