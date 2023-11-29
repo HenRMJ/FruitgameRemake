@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
         if (ES3.KeyExists("musicVolume"))
         {
             musicSlider.value = (float)ES3.Load("musicVolume");
-            volumeGlobal.Value = musicSlider.value;
+         //   volumeGlobal.Value = musicSlider.value;
         }
 
         if (ES3.KeyExists("sfxSlider"))

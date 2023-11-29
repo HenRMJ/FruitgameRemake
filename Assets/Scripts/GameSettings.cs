@@ -10,21 +10,22 @@ public class GameSettings : MonoBehaviour
     [SerializeField] private Slider musicSlider, sfxSlider;
     [SerializeField] private Toggle oskSetting;
     [SerializeField] private TMP_Dropdown batteryDropdown;
-    [SerializeField] private FMODUnity.StudioGlobalParameterTrigger volumeGlobal;
+    
 
     private void Start()
     {
         if (ES3.KeyExists("musicVolume"))
         {
             musicSlider.value = (float)ES3.Load("musicVolume");
-            volumeGlobal.Value = musicSlider.value;
-        
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("VolumeGlobal", musicSlider.value);
+
+
         }
 
         if (ES3.KeyExists("sfxSlider"))
         {
             sfxSlider.value = (float)ES3.Load("sfxSlider");
-    
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("SFX Volume Global", sfxSlider.value);
         }
 
         if (ES3.KeyExists("osk") && oskSetting != null)
@@ -76,10 +77,12 @@ public class GameSettings : MonoBehaviour
         if (sound == "music")
         {
             ES3.Save("musicVolume", musicSlider.value);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("volumeGlobal", musicSlider.value);
         }
         else
         {
             ES3.Save("sfxSlider", sfxSlider.value);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("SFX Volume Global", sfxSlider.value);
         }
     }
 

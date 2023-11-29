@@ -1003,6 +1003,7 @@ GameObject:
   - component: {fileID: 270795438}
   - component: {fileID: 270795437}
   - component: {fileID: 270795436}
+  - component: {fileID: 270795439}
   m_Layer: 5
   m_Name: Restart Button
   m_TagString: Untagged
@@ -1124,6 +1125,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270795434}
   m_CullTransparentMesh: 1
+--- !u!114 &270795439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270795434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1793956746
+      Data2: 1319549260
+      Data3: -766513772
+      Data4: -629305487
+    Path: event:/UI/UI_Buttom
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &288563722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,14 +1757,14 @@ MonoBehaviour:
   m_HandleRect: {fileID: 434187381}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 0.498
+  m_MaxValue: 10
+  m_WholeNumbers: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1131716230}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 780102431}
+        m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
         m_MethodName: AdjustSound
         m_Mode: 5
         m_Arguments:
@@ -2385,6 +2417,9 @@ GameObject:
   - component: {fileID: 780102430}
   - component: {fileID: 780102429}
   - component: {fileID: 780102431}
+  - component: {fileID: 780102433}
+  - component: {fileID: 780102432}
+  - component: {fileID: 780102434}
   m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
@@ -2470,7 +2505,71 @@ MonoBehaviour:
   sfxSlider: {fileID: 550825503}
   oskSetting: {fileID: 0}
   batteryDropdown: {fileID: 799733220}
-  volumeGlobal: {fileID: 2067519653}
+--- !u!114 &780102432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780102427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 894247505
+      Data2: 1116091046
+      Data3: -768669290
+      Data4: 1893566817
+    Path: event:/Musics/Music1
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params:
+  - Name: volume
+    Value: 25
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &780102433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780102427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Parameter: VolumeGlobal
+  TriggerEvent: 1
+  Value: 5
+--- !u!114 &780102434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780102427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Parameter: SFX Volume Global
+  TriggerEvent: 1
+  Value: 5
 --- !u!1 &799733218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3137,7 +3236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 963194225}
 --- !u!1 &976303502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,6 +3795,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097400707}
   m_CullTransparentMesh: 1
+--- !u!1 &1100740535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 234032219997523959, guid: b51023a66d9b13f4fbed0124ab56492e, type: 3}
+  m_PrefabInstance: {fileID: 5093504632707810221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1100740537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100740535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1793956746
+      Data2: 1319549260
+      Data3: -766513772
+      Data4: -629305487
+    Path: event:/UI/UI_Buttom
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1131716225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,7 +3958,7 @@ MonoBehaviour:
   detailsPanel: {fileID: 1697986393}
   combinationUI: {fileID: 1764559103}
   nextFruitUI: {fileID: 1940335579}
-  volumeGlobal: {fileID: 2067519653}
+  volumeGlobal: {fileID: 0}
 --- !u!95 &1131716231
 Animator:
   serializedVersion: 5
@@ -6408,6 +6543,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831784317}
   m_CullTransparentMesh: 1
+--- !u!1 &1902317822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4975937292329569919, guid: b51023a66d9b13f4fbed0124ab56492e, type: 3}
+  m_PrefabInstance: {fileID: 5093504632707810221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1902317824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902317822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1793956746
+      Data2: 1319549260
+      Data3: -766513772
+      Data4: -629305487
+    Path: event:/UI/UI_Buttom
+  Event: 
+  PlayEvent: 19
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1940335579
 GameObject:
   m_ObjectHideFlags: 0
@@ -6818,8 +6989,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2067519651}
   - component: {fileID: 2067519652}
-  - component: {fileID: 2067519653}
-  - component: {fileID: 2067519654}
   m_Layer: 5
   m_Name: Music Slider
   m_TagString: Untagged
@@ -6896,14 +7065,14 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 10
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1131716225}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 780102431}
+        m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
+        m_MethodName: AdjustSound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6913,53 +7082,6 @@ MonoBehaviour:
           m_StringArgument: music
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2067519653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067519650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Parameter: VolumeGlobal
-  TriggerEvent: 1
-  Value: 5
---- !u!114 &2067519654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067519650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 894247505
-      Data2: 1116091046
-      Data3: -768669290
-      Data4: 1893566817
-    Path: event:/Musics/Music1
-  Event: 
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &2130014014
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,7 +7329,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 234032219997523959, guid: b51023a66d9b13f4fbed0124ab56492e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1100740537}
+    - targetCorrespondingSourceObject: {fileID: 4975937292329569919, guid: b51023a66d9b13f4fbed0124ab56492e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1902317824}
   m_SourcePrefab: {fileID: 100100000, guid: b51023a66d9b13f4fbed0124ab56492e, type: 3}
 --- !u!1001 &7624769462359584084
 PrefabInstance:
