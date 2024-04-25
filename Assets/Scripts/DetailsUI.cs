@@ -10,12 +10,12 @@ public class DetailsUI : MonoBehaviour
 
     private void Start()
     {
-        attempt = SaveManager.Instance.GetLastAttempt();
+        attempt = MySaveManager.Instance.GetLastAttempt();
 
         combinedFruitsText.text = attempt.GetFruitsCombined().ToString();
         largestFruitText.text = attempt.GetLargestFruit().ToString();
         scoreText.text = attempt.GetScore().ToString();
-        highScoreText.text = SaveManager.Instance.GetHighScore(SaveManager.Instance.Mode).ToString();
+        highScoreText.text = MySaveManager.Instance.GetHighScore(MySaveManager.Instance.Mode).ToString();
     }
 
     public void LoadScene(string sceneName)

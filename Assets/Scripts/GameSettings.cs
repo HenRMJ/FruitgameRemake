@@ -16,13 +16,13 @@ public class GameSettings : MonoBehaviour
         if (ES3.KeyExists("musicVolume"))
         {
             musicSlider.value = (float)ES3.Load("musicVolume");
-            SoundManager.Instance.GetAudioSource().volume = (float)ES3.Load("musicVolume");
+
+
         }
 
         if (ES3.KeyExists("sfxSlider"))
         {
             sfxSlider.value = (float)ES3.Load("sfxSlider");
-            SoundManager.Instance.SetSoundEffectVolume((float)ES3.Load("sfxSlider"));
         }
 
         if (ES3.KeyExists("osk") && oskSetting != null)
@@ -74,12 +74,10 @@ public class GameSettings : MonoBehaviour
         if (sound == "music")
         {
             ES3.Save("musicVolume", musicSlider.value);
-            SoundManager.Instance.GetAudioSource().volume = (float)ES3.Load("musicVolume");
         }
         else
         {
             ES3.Save("sfxSlider", sfxSlider.value);
-            SoundManager.Instance.SetSoundEffectVolume((float)ES3.Load("sfxSlider"));
         }
     }
 

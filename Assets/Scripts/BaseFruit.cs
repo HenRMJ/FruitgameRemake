@@ -57,7 +57,7 @@ public class BaseFruit : MonoBehaviour
 
     private void EndlessMode(BaseFruit baseFruit, Collision2D collision)
     {
-        if (SaveManager.Instance.Mode == GameMode.Endless)
+        if (MySaveManager.Instance.Mode == GameMode.Endless)
         {
             if (fruit != Fruit.Pumpkin) return;
 

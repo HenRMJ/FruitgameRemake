@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class SaveManager : MonoBehaviour
+public class MySaveManager : MonoBehaviour
 {
-    public static SaveManager Instance;
+    public static MySaveManager Instance;
 
     public GameMode Mode { get; private set; }
 

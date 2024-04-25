@@ -29,7 +29,7 @@ public class GameSceneManager : MonoBehaviour
 
     public void LoadLastGameMode()
     {
-        switch (SaveManager.Instance.Mode)
+        switch (MySaveManager.Instance.Mode)
         {
             case GameMode.Quick:
                 LoadNewScene("QuickPlay");

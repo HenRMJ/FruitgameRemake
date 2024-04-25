@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 
     public event EventHandler OnLostGame;
 
+
     [SerializeField] private TMP_Text scoreText, highScoreText;
 
     private int score;
@@ -57,13 +58,16 @@ public class ScoreManager : MonoBehaviour
     private void UpdateText()
     {
         scoreText.text = score.ToString();
-        highScoreText.text = SaveManager.Instance.GetHighScore(SaveManager.Instance.Mode).ToString();
+        highScoreText.text = MySaveManager.Instance.GetHighScore(MySaveManager.Instance.Mode).ToString();
     }
 
     public void LostGame()
     {
         lost = true;
         Fruit highestFruit = Fruit.Cherry;
+        // youLoseSound.Play();
+
+        
 
         // Checking highest fruit in the game
         foreach(BaseFruit fruit in FindObjectsOfType<BaseFruit>())
@@ -77,9 +81,9 @@ public class ScoreManager : MonoBehaviour
         }
 
         // Saving
-        GameAttempt attempt = new GameAttempt(score, fruitsCombined, highestFruit,SaveManager.Instance.Mode);
-        SaveManager.Instance.SaveAttempt(attempt);
-        SaveManager.Instance.SaveHighScore(score);
+        GameAttempt attempt = new GameAttempt(score, fruitsCombined, highestFruit,MySaveManager.Instance.Mode);
+        MySaveManager.Instance.SaveAttempt(attempt);
+        MySaveManager.Instance.SaveHighScore(score);
 
         OnLostGame?.Invoke(this, EventArgs.Empty);
         UpdateText();
@@ -87,14 +91,14 @@ public class ScoreManager : MonoBehaviour
 
     private void CheckHighscore()
     {
-        if (score > SaveManager.Instance.GetHighScore(SaveManager.Instance.Mode))
+        if (score > MySaveManager.Instance.GetHighScore(MySaveManager.Instance.Mode))
         {
-            SaveManager.Instance.SaveHighScore(score);
+            MySaveManager.Instance.SaveHighScore(score);
 
             if (!newHighScore)
             {
                 newHighScore = true;
-                SoundManager.Instance.PlaySound("Highscore");
+                // soundHighScore.Play();
             }
         }        
     }

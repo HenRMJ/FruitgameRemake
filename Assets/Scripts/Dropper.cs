@@ -23,6 +23,11 @@ public class Dropper : MonoBehaviour
         playerControls = new PlayerControls();
 
         playerControls.Player.Drop.performed += OnDrop;
+
+        playerControls.Player.Move.started += OnMoveStarted;
+
+        playerControls.Player.Move.canceled += OnMoveCanceled;
+
     }
 
     private void Start()
@@ -62,6 +67,18 @@ public class Dropper : MonoBehaviour
     {
         if (ScoreManager.Instance.HasLost()) return;
         DropFruit();
+    }
+
+    public void OnMoveStarted(InputAction.CallbackContext callbackContext)
+    {
+        if (ScoreManager.Instance.HasLost()) return;
+        // cloudMove.Play();
+    }
+
+    public void OnMoveCanceled(InputAction.CallbackContext callbackContext)
+    {
+        if (ScoreManager.Instance.HasLost()) return;
+        // cloudMove.Stop();
     }
 
     private void DropFruit()

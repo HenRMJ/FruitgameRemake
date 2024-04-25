@@ -19,7 +19,7 @@ public class UICustomizationElement : MonoBehaviour, IDragHandler, IBeginDragHan
 
     private void Start()
     {
-        if (SaveManager.Instance.TryLoadUIPosition(elementName, out Vector2 position))
+        if (MySaveManager.Instance.TryLoadUIPosition(elementName, out Vector2 position))
         {
             uiElement.anchoredPosition = position;
         }
@@ -43,7 +43,7 @@ public class UICustomizationElement : MonoBehaviour, IDragHandler, IBeginDragHan
     {
         if (inGame) return;
 
-        SaveManager.Instance.SaveUIPoistions(elementName, uiElement.anchoredPosition);
+        MySaveManager.Instance.SaveUIPoistions(elementName, uiElement.anchoredPosition);
     }
 
     public void ResetPosition()
